@@ -1,0 +1,3 @@
+public class CalcadoRepository extends JpaRepository<long id>{
+
+}
