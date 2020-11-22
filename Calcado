@@ -1,26 +1,30 @@
+package atividade_20202211
+
+@Entity
 public class Calcado{
+  @id
   private long id;
   private String marca;
   private long tamanho;
-  
+
   public Calcado(long id, String marca, long tamanho){
-    this.id = id;
-    this.marca = marca;
-    this.tamanho = tamanho;
+   this.id = id;
+   this.marca = marca;
+   this.tamanho = tamanho;
   }
-  
+
   public long getId(){
-    return id;;
+   return id;;
   }
-  
+
   public String getMarca(){
-    return marca;
+   return marca;
   }
-  
+
   public long getTamanho(){
-    return tamanho;
+   return tamanho;
   }
-  
+
   public void setTamanho(long tamanho){
     this.tamanho = tamanho;
   }
