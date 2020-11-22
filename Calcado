@@ -1,0 +1,27 @@
+public class Calcado{
+  private long id;
+  private String marca;
+  private long tamanho;
+  
+  public Calcado(long id, String marca, long tamanho){
+    this.id = id;
+    this.marca = marca;
+    this.tamanho = tamanho;
+  }
+  
+  public long getId(){
+    return id;;
+  }
+  
+  public String getMarca(){
+    return marca;
+  }
+  
+  public long getTamanho(){
+    return tamanho;
+  }
+  
+  public void setTamanho(long tamanho){
+    this.tamanho = tamanho;
+  }
+}
