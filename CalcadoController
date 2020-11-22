@@ -1,0 +1,44 @@
+package atividadeAvaliativa_20202211
+
+@RestController
+@RequestMapping("/api/calcado")
+public class CalcadoController{
+
+  @Autowired
+  private CalcadoRepository repo;
+  
+  @deleteMapping("/{id}")
+  public void deleteCalcado(@pathVariable long id){
+    repo.deleteById(id);
+  }
+  
+  @getMapping("/{id}")
+  public long getByIdCalcado(@pathVariable long id){
+    return repo.findById(id).get();
+  }
+  
+  @getMapping
+  public List<Calcado> getAllCalcado(){
+    return repo.findAll();
+  }
+  
+  @PostMapping("/{id}")
+  public void postCalcado(@PathVariable String id, @RequestBody Produto atualizado) {
+    if(!id.equals(atualizado.getId())) {
+     throw new IdsDiveregentesException();
+    }
+    if(!repo.findById(atualizado.getId()).isPresent()) {            
+      throw new RegistroNãoEncontradoException();
+    }
+    repo.save(atualizado);
+  }
+    
+   @PutMapping
+   public long putCalcado(@RequestBody Calcado novoCalcado) {
+     if(repo.NoSuchElementException()) {            
+      novoCalcado = repo.save(novoCalcado);
+      return novoCalcado.getId();
+     }
+     throw new RegistroDuplicadoException();
+   }
+}
